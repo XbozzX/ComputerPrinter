@@ -3,16 +3,19 @@ package com.learnProgramming;
 public class Main {
 
     public static void main(String[] args) {
-        PCPrinter pcPrinter1 = new PCPrinter(50,0,false,1);
+        Printer printer1 = new Printer(50,true);
 
-        pcPrinter1.StartPrint(10,2);
-        System.out.println("ID: " + pcPrinter1.getClientID());
+        System.out.println("Adding toner: " + printer1.addToner(60));
 
-        pcPrinter1.tonerFill(20);
-        System.out.println(pcPrinter1.getTonerLevel());
+        System.out.println("Initial pages been Printed: " + printer1.getPagesPrinted());
 
-        System.out.println(pcPrinter1.isDuplexPrinter());
+        int pagesPrinted = printer1.printPages(1100);
 
-        System.out.println(pcPrinter1.getNumberPagesPrinted());
+        System.out.println("print pages: " + pagesPrinted + "\n new total pages have been print:" + printer1.getPagesPrinted());
+
+        pagesPrinted = printer1.printPages(1510);
+
+        System.out.println("print pages: " + pagesPrinted + "\n new total pages have been print:" + printer1.getPagesPrinted());
+
     }
 }
